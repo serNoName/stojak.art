@@ -1,0 +1,22 @@
+:root {
+    --main-text-color: #3C3231;
+    --main-bg-color: #F1F1F1;
+
+    --secondary-color: #f8f166;
+
+    --menu-bg-rgb: 34, 34, 34;
+    --menu-burger-color: #222222;
+    --menu-border-rgb: 255, 255, 255;
+    --menu-wrapper-bg-color: #3E3E3E;
+}
+
+$main-text-color: var(--main-text-color);
+$main-bg-color: var(--main-bg-color);
+
+
+$secondary-color: var(--secondary-color);
+
+$menu-bg-rgb: var(--menu-bg-rgb);
+$menu-burger-color: var(--menu-burger-color);
+$menu-border-rgb: var(--menu-border-rgb);
+$menu-wrapper-bg-color: var(--menu-wrapper-bg-color);

@@ -1,0 +1,26 @@
+@import 'base/variables.scss';
+@import 'base/animation.scss';
+@import 'base/mixins.scss';
+@import 'base/ui.scss';
+
+@import 'blocks/footer.scss';
+@import 'blocks/header.scss';
+@import 'blocks/menu.scss';
+
+@import 'other.scss';
+@import 'media.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Alegreya';
+    color: $main-text-color;
+}
+
+body {
+    background: url(../images/bg.jpg) $main-bg-color;
+}

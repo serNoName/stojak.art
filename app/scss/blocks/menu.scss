@@ -1,0 +1,198 @@
+.menu {
+    font-family: 'Nunito';
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba($menu-bg-rgb, .8);
+    border-radius: 12px;
+    padding: 6px;
+    font-size: 16px;
+    display: flex;
+    line-height: 100%;
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s width, 1 max-width;
+    overflow: hidden;
+    max-width: calc(100dvw - 32px);
+    max-height: calc(100dvh - 48px);
+    z-index: 2;
+    &__bottom {
+        position: relative;
+        display: flex;
+        gap: 6px;
+        padding-left: 126px;
+    }
+
+    &__wrapper {
+        background-color: $menu-wrapper-bg-color;
+        list-style: none;
+        display: flex;
+        gap: 6px;
+        border-radius: 8px;
+        padding: 6px;
+    }
+
+    &__button {
+        --menu-border-opacity: .1;
+        padding: 14px 12px;
+        border-radius: 8px;
+        color: $main-bg-color;
+        text-decoration: none;
+        border: rgba($menu-border-rgb, var(--menu-border-opacity)) 1px solid;
+        transition: .1s border-color ease-in-out, .2s background-color;
+        white-space: nowrap;
+        user-select: none;
+
+        &:active {
+            background-color: rgba($color: $menu-burger-color, $alpha: .1);
+            --menu-border-opacity: .5 !important;
+        }
+    }
+
+    &__li {
+        display: flex;
+    }
+
+    &__burger {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        width: 120px;
+        --menu-border-opacity: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        gap: 4px;
+        justify-content: center;
+        appearance: none;
+        background-color: $menu-burger-color;
+        border: none;
+        color: $main-bg-color;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid rgba($menu-border-rgb, var(--menu-border-opacity));
+        transition: .1s border-color ease-in-out, .2s background-color, .2s width ease-in-out;
+        user-select: none;
+        &:active {
+            background-color: rgba($color: #000000, $alpha: .1);
+            --menu-border-opacity: .5 !important;
+        }
+    }
+
+    &__top {
+        background-color: #2e2e2e;
+        display: none;
+        border-radius: 8px;
+        padding: 24px;
+        overflow: auto;
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        list-style: none;
+        font-size: 18px;
+        padding: 6px 0;
+        padding-left: 16px;
+        white-space: nowrap;
+        &:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 1px;
+            border-right: 1px dashed #fff;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: -1px;
+            left: -1px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #fff;
+            border-right: 1px dashed #fff;
+        }
+    }
+    
+    &__inner {
+        display: flex;
+        gap: 48px;
+    }
+
+    &__link {
+        position: relative;
+        font-weight: 400;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        transition: color .1;
+        user-select: none;
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: -15px;
+            width: 1px;
+            background-color: $secondary-color;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18px;
+    height: 18px;
+    padding: 4px 2px;
+    transition: .2s rotate ease-in-out;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-radius: 2px;
+        background-color: $main-bg-color;
+        transition: .2s opacity, rotate .2s, scale .2s, translate .1s;
+    }
+}
+
+
+.--burger-active {
+    width: 100%;
+    max-height: 58px;
+
+    .burger {
+        rotate: 180deg;
+
+        span {
+            &:nth-child(1) {
+                rotate: 45deg;
+                translate: 0 4px;
+                scale: 1.3 1;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                rotate: -45deg;
+                translate: 0 -5px;
+                scale: 1.3 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.footer {
+    padding: 100px 0 140px 0;
+    &__label {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+}
+
+.social-networks {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    justify-content: center;
+    &__link {
+        display: inline-block;
+        transition: opacity .1s, scale .2s ease-in-out;
+        animation: shaking .3s infinite;
+    }
+}

@@ -1,0 +1,48 @@
+@media (hover:hover) {
+    .menu__button:hover {
+        --menu-border-opacity: .3;
+    }
+    .menu__burger:hover {
+        --menu-border-opacity: .3;
+        background-color: rgba(255, 255, 255, calc(--menu-border-opacity - 1));
+    }
+    .menu__link:hover {
+        color: $secondary-color;
+        &:before {
+            opacity: 1;
+        }
+    }
+    .social-networks__link:hover {
+        scale: 1.4;
+        opacity: .9;
+    }
+}
+@media (max-width: 768px) {
+    .menu {
+        &__top {
+            width: 100%;
+        }
+        &__inner {
+            gap: 0;
+            flex-direction: column;
+        }
+        &__wrapper {
+            display: none;
+        }
+        &__bottom {
+            padding: 0;
+        }
+        &__burger {
+            position: static;
+            min-height: 56px;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    body,
+    html {
+        scroll-behavior: smooth;
+    }
+}

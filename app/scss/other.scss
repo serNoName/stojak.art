@@ -1,0 +1,42 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    z-index: 1;
+}
+
+.container {
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+    width: 1440px;
+}
+
+.inner {
+    flex: 1;
+}
+
+#grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 0;
+}
+
+.hide {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    position: absolute;
+    z-index: -1000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

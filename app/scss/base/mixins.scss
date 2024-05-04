@@ -1,0 +1,6 @@
+@mixin new_icon($name) {
+    .icon_#{$name} {
+        mask-image: url(../../images/icons/#{$name}.svg);
+        -webkit-mask-image: url(../../images/icons/#{$name}.svg);     
+    }
+}
