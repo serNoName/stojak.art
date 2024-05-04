@@ -8,8 +8,13 @@
     background-color: $main-text-color;
     vertical-align: middle;
 
+<<<<<<< HEAD
     &_small {
         --icon-size: 16px;
+=======
+    &__small {
+        --icon-size: 16px
+>>>>>>> 35d7817a0136097c0785649709d318dcd7c5a394
     }
 }
 
