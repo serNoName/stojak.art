@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "lozad": "^1.16.0",
-    "normalize-scss": "^8.0.0"
+    "normalize-scss": "^8.0.0",
+    "photoswipe": "^5.4.3"
   }
 }

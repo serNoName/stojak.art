@@ -8,8 +8,8 @@
     background-color: $main-text-color;
     vertical-align: middle;
 
-    &__small {
-        --icon-size: 16px
+    &_small {
+        --icon-size: 16px;
     }
 }
 
@@ -84,5 +84,31 @@
 
     &_gallery {
         margin-bottom: 40px;
+    }
+}
+
+.button {
+    appearance: none;
+    font-family: 'Alegreya';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: $main-text-color;
+    color: $main-bg-color;
+    border: none;
+    text-decoration: none;
+    width: fit-content;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 130%;
+    margin-bottom: 8px;
+    border-radius: none;
+    .icon:not(svg) {
+        background-color: currentColor;
+    }
+    &:has(> .icon) {
+        padding-right: 20px;
     }
 }

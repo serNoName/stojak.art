@@ -1,0 +1,17 @@
+.about-me {
+    display: grid;
+    gap: 60px 40px;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    &__col {
+    }
+
+    &__image {
+        position: sticky;
+        top: 32px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+}
