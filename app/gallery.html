@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../images/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
+    <meta name="application-name" content="Andrii Stoajk">
+    <meta name="msapplication-TileColor" content="#f1f1f1">
+    <meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.min.css">
+
+    <title>Stojak Andrii</title>
+</head>
+<body>
+<div class="wrapper">
+<header class="header">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Andrii Stojak logo" class="logo" width="312">
+    </a>
+</header>
+
+
+<div class="inner">
+    <div class="gallery">
+        <div class="container">
+            <script type="module">
+                import PhotoSwipeLightbox from "https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.min.js";
+                import PhotoSwip from "https://unpkg.com/photoswipe@5.4.3/dist/photoswipe.esm.min.js";
+
+                    const lightbox = new PhotoSwipeLightbox({
+                        mainClass: 'pswp_single',
+                        gallery: ".--gallery-trigger",
+                        bgOpacity: .5,
+                        arrowPrev: false,
+                        arrowNext: false,
+                        counter: false,
+                        pswpModule: () => PhotoSwip,
+                    });
+
+                    lightbox.on('uiRegister', function () {
+                        lightbox.pswp.ui.registerElement({
+                            name: 'download-button',
+                            order: 8,
+                            isButton: true,
+                            tagName: 'a',
+
+                            // SVG with outline
+                            html: {
+                                isCustomSVG: true,
+                                inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+                                outlineID: 'pswp__icn-download'
+                            },
+
+                            // Or provide full svg:
+                            // html: '<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" class="pswp__icn"><path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" /></svg>',
+
+                            // Or provide any other markup:
+                            // html: '<i class="fa-solid fa-download"></i>' 
+
+                            onInit: (el, pswp) => {
+                                el.setAttribute('download', '');
+                                el.setAttribute('target', '_blank');
+                                el.setAttribute('rel', 'noopener');
+                                el.setAttribute('aria-label', 'Download');
+                                el.setAttribute('title', 'Download');
+
+                                pswp.on('change', () => {
+                                    console.log('change');
+                                    el.href = pswp.currSlide.data.src;
+                                });
+                            }
+                        });
+                    });
+
+                    lightbox.init();
+            </script>
+
+            <h1 class="h1">Галерея</h1>
+            <div class="gallery__grid" id="gallery">
+                <div class="card-picture scroll-reveal card-picture_gallery">
+                    <a href="../images/pictures/6.jpg" class="card-picture__inner --gallery-trigger"  data-pswp-width="3011" data-pswp-height="2268">
+                        <img src="../images/pictures/6.jpg" srcset="../images/pictures/6.jpg" data-srcset="../images/pictures/6.jpg" alt="Чортики не тліють" class="card-picture__image lozad" width="700">
+                    </a>
+                    <div class="card-picture__content">
+                        <a href="picture.html" class="card-picture__name">“Чортики не тліють”</a>
+                        <span class="card-picture__line"></span>
+                        <div class="card-picture__details">полотно, 40см/40см</div>
+                        <a href="picture.html" class="card-picture__name card-picture__more">Дізнатись більше</a>
+                    </div>
+                </div>
+                <div class="card-picture scroll-reveal card-picture_gallery">
+                    <a href="../images/pictures/6.jpg" class="card-picture__inner --gallery-trigger"  data-pswp-width="3011" data-pswp-height="2268">
+                        <img src="../images/pictures/6.jpg" srcset="../images/pictures/6.jpg" data-srcset="../images/pictures/6.jpg" alt="Чортики не тліють" class="card-picture__image lozad" width="700">
+                    </a>
+                    <div class="card-picture__content">
+                        <a href="picture.html" class="card-picture__name">“Чортики не тліють”</a>
+                        <span class="card-picture__line"></span>
+                        <div class="card-picture__details">полотно, 40см/40см</div>
+                        <a href="picture.html" class="card-picture__name card-picture__more">Дізнатись більше</a>
+                    </div>
+                </div>
+                <div class="card-picture scroll-reveal card-picture_gallery">
+                    <a href="../images/pictures/6.jpg" class="card-picture__inner --gallery-trigger"  data-pswp-width="3011" data-pswp-height="2268">
+                        <img src="../images/pictures/6.jpg" srcset="../images/pictures/6.jpg" data-srcset="../images/pictures/6.jpg" alt="Чортики не тліють" class="card-picture__image lozad" width="700">
+                    </a>
+                    <div class="card-picture__content">
+                        <a href="picture.html" class="card-picture__name">“Чортики не тліють”</a>
+                        <span class="card-picture__line"></span>
+                        <div class="card-picture__details">полотно, 40см/40см</div>
+                        <a href="picture.html" class="card-picture__name card-picture__more">Дізнатись більше</a>
+                    </div>
+                </div>
+                <div class="card-picture scroll-reveal card-picture_gallery">
+                    <a href="../images/pictures/6.jpg" class="card-picture__inner --gallery-trigger"  data-pswp-width="3011" data-pswp-height="2268">
+                        <img src="../images/pictures/6.jpg" srcset="../images/pictures/6.jpg" data-srcset="../images/pictures/6.jpg" alt="Чортики не тліють" class="card-picture__image lozad" width="700">
+                    </a>
+                    <div class="card-picture__content">
+                        <a href="picture.html" class="card-picture__name">“Чортики не тліють”</a>
+                        <span class="card-picture__line"></span>
+                        <div class="card-picture__details">полотно, 40см/40см</div>
+                        <a href="picture.html" class="card-picture__name card-picture__more">Дізнатись більше</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <footer class="footer">
+
+
+            <div class="container">
+
+
+                <div class="footer__label">
+
+
+                    Andrii Stojak
+
+
+                </div>
+
+
+                <ul class="social-networks">
+
+
+                    <li class="social-networks__li">
+
+
+                        <a href="#" class="social-networks__link">
+
+
+                            <span class="hide">Електронна пошта</span>
+
+
+                            <span class="icon icon_email"></span>
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li class="social-networks__li">
+
+
+                        <a href="#" class="social-networks__link">
+
+
+                            <span class="hide">Телеграм</span>
+
+
+                            <span class="icon icon_telegram"></span>
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li class="social-networks__li">
+
+
+                        <a href="#" class="social-networks__link">
+
+
+                            <span class="hide">Інстаграм</span>
+
+
+                            <span class="icon icon_instagram"></span>
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li class="social-networks__li">
+
+
+                        <a href="#" class="social-networks__link">
+
+
+                            <span class="hide">Поділитися стронінкою</span>
+
+
+                            <span class="icon icon_share"></span>
+
+
+                        </a>
+
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+    <canvas id="grain"></canvas>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+
+    <script src="js/main.min.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>
+<div class="menu">
+    <div class="menu__top">
+        <div class="menu__inner">
+            <ul class="menu__list">
+                <li class="menu__li"><a href="#" class="menu__link">Блог</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Про мене</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Галерея</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Книги</a></li>
+            </ul>
+            <ul class="menu__list">
+                <li class="menu__li"><a href="#" class="menu__link">Блог</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Про мене</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Галерея</a></li>
+            </ul>
+            <ul class="menu__list">
+                <li class="menu__li"><a href="#" class="menu__link">Блог</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Про мене</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Галерея</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Книги</a></li>
+            </ul>
+            <ul class="menu__list">
+                <li class="menu__li"><a href="#" class="menu__link">Блог</a></li>
+                <li class="menu__li"><a href="#" class="menu__link">Про мене</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu__bottom">
+        <button class="menu__burger" id="burger">
+            <span class="menu__text">Меню</span>
+            <span class="burger">
+                <span></span><span></span><span></span>
+            </span>
+        </button>
+        <ol class="menu__wrapper">
+            <li class="menu__li"><a href="#" class="menu__button">Головна</a></li>
+            <li class="menu__li"><a href="#" class="menu__button">Галерея</a></li>
+            <li class="menu__li"><a href="#" class="menu__button">Контакти</a></li>
+        </ol>
+    </div>
+    
+</div>

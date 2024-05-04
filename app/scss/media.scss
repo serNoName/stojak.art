@@ -1,4 +1,4 @@
-@media (hover:hover) {
+@media ((hover:hover) and (pointer: fine)) {
     .menu__button:hover {
         --menu-border-opacity: .3;
     }
@@ -16,7 +16,42 @@
         scale: 1.4;
         opacity: .9;
     }
+    .card-picture {
+        &__name:hover {
+            text-decoration: underline;
+        }
+        &__image:hover {
+            scale: 1.1;
+            opacity: .5;
+            filter: blur(4px);
+        }
+        &__inner {
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+        &:hover {
+            .card-picture {
+                &__more {
+                    translate: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
+
+@media ((hover:none) and (pointer: none)) {
+    .card-picture {
+        &__more {
+            translate: 0;
+            opacity: 1;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .menu {
         &__top {

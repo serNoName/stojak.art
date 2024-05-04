@@ -7,6 +7,7 @@
     -webkit-mask-size: cover;
     background-color: $main-text-color;
     vertical-align: middle;
+
     &__small {
         --icon-size: 16px
     }
@@ -16,3 +17,72 @@
 @include new_icon('telegram');
 @include new_icon('instagram');
 @include new_icon('share');
+@include new_icon('loop-plus');
+
+.card-picture {
+    max-width: 100%;
+
+    &__image {
+        width: 100%;
+        transition: .2s scale, .2s opacity;
+        vertical-align: bottom;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $main-text-color;
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
+    }
+
+    &__name {
+        text-decoration: none;
+        color: $main-text-color;
+    }
+
+    &__line {
+        width: 24px;
+        height: 1px;
+        background-color: currentColor;
+    }
+
+    &__details {}
+
+    &__inner {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-bottom: 12px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 88px;
+            height: 88px;
+            opacity: 0;
+            background-color: $main-text-color;
+            mask-image: url(../../images/icons/loop-plus.svg);
+            -webkit-mask-image: url(../../images/icons/loop-plus.svg);
+            mask-size: cover;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+    }
+
+    &__more {
+        translate: 24px;
+        opacity: 0;
+        margin: 0 0 0 auto;
+        transition: opacity .2s, translate .2s;
+    }
+
+    &_gallery {
+        margin-bottom: 40px;
+    }
+}
