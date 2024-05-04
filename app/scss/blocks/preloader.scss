@@ -1,0 +1,22 @@
+.preloader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    background-color: $main-bg-color;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 99;
+    &__content {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    &__text {
+        margin-bottom: 24px;
+        text-align: center;
+        &::after {
+            content: attr(data-text);
+        }
+    }
+}

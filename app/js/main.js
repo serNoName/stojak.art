@@ -1,5 +1,26 @@
 "use strict";
 
+const cursor = $(".cursor");
+
+$(document).on("mousemove scroll", (e) => {
+	cursor.css("left", e.pageX + 4 + "px");
+	cursor.css("top", e.pageY + 4 + "px");
+});
+
+$(document).on("mouseenter", "button, a", function () {
+	cursor.addClass("cursor_hovered");
+});
+$(document).on("mouseleave", "button, a", function () {
+	cursor.removeClass("cursor_hovered");
+});
+
+window.addEventListener("load", function () {
+	$("#preloader").animate({ opacity: "0" }, "slow", function () {
+		$(this).remove();
+		$(".menu").addClass("menu_visible");
+	});
+});
+
 const observer = lozad(".lozad", {
 	rootMargin: "10px 0px", // syntax similar to that of CSS Margin
 	threshold: 0.1, // ratio of element convergence

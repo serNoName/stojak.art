@@ -13,11 +13,13 @@
     gap: 6px;
     display: flex;
     flex-direction: column;
-    transition: 1s width, 1 max-width;
+    transition: .5s opacity ease-in-out, 1s translate cubic-bezier(.4,2.2,.2,.5);
     overflow: hidden;
     max-width: calc(100dvw - 32px);
     max-height: calc(100dvh - 48px);
     z-index: 2;
+    opacity: 0;
+    translate: 0 200px;
     &__bottom {
         position: relative;
         display: flex;
@@ -72,7 +74,6 @@
         border: none;
         color: $main-bg-color;
         border-radius: 8px;
-        cursor: pointer;
         border: 1px solid rgba($menu-border-rgb, var(--menu-border-opacity));
         transition: .1s border-color ease-in-out, .2s background-color, .2s width ease-in-out;
         user-select: none;
@@ -147,6 +148,10 @@
             opacity: 0;
             transition: opacity .2s;
         }
+    }
+    &_visible {
+        opacity: 1;
+        translate: none;
     }
 }
 

@@ -7,10 +7,8 @@
 @import 'blocks/footer.scss';
 @import 'blocks/header.scss';
 @import 'blocks/gallery.scss';
-<<<<<<< HEAD
 @import 'blocks/about-me.scss';
-=======
->>>>>>> 35d7817a0136097c0785649709d318dcd7c5a394
+@import 'blocks/preloader.scss';
 @import 'blocks/menu.scss';
 
 @import 'other.scss';
@@ -25,8 +23,37 @@
 html {
     font-family: 'Alegreya';
     color: $main-text-color;
+    scrollbar-gutter: stable;
+    background-color: $main-bg-color;
+    scrollbar-width: thin;
+    scrollbar-color: $main-text-color #E8E8E8;
 }
 
 body {
     background: url(../images/bg.jpg) $main-bg-color;
+    overflow-x: hidden;
+}
+
+html,
+a,
+button {
+    cursor: url('../images/custom-cursor.png'), auto !important;
+}
+
+.cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width .5s, height .5s;
+    z-index: 9999;
+    transform-origin: top left;
+    backdrop-filter: invert(60%);
+    &_hovered {
+        height: 80px;
+        width: 80px;
+    }
 }

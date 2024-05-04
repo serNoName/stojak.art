@@ -43,7 +43,13 @@
     }
 }
 
-@media ((hover:none) and (pointer: none)) {
+@media (pointer: none) {
+    .cursor {
+        display: none;
+    }
+}
+
+@media (hover:none) {
     .card-picture {
         &__more {
             translate: 0;

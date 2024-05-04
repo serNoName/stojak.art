@@ -8,13 +8,8 @@
     background-color: $main-text-color;
     vertical-align: middle;
 
-<<<<<<< HEAD
     &_small {
         --icon-size: 16px;
-=======
-    &__small {
-        --icon-size: 16px
->>>>>>> 35d7817a0136097c0785649709d318dcd7c5a394
     }
 }
 
@@ -92,6 +87,32 @@
     }
 }
 
+.load-bar {
+    position: relative;
+    height: 3px;
+    max-width: 100%;
+    &_preloader {
+        width: 280px;
+    }
+    &:before, &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 4px;
+    }
+    &:before {
+        background-color: $main-text-color;
+        opacity: .2;
+        width: 100%;
+    }
+    &:after {
+        background-color: $main-text-color;
+        width: 20%;
+    }
+}
+
 .button {
     appearance: none;
     font-family: 'Alegreya';
@@ -105,7 +126,6 @@
     text-decoration: none;
     width: fit-content;
     padding: 12px 24px;
-    cursor: pointer;
     font-size: 18px;
     line-height: 130%;
     margin-bottom: 8px;
