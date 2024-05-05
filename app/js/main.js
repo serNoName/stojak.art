@@ -1,19 +1,5 @@
 "use strict";
 
-const cursor = $(".cursor");
-
-$(document).on("mousemove scroll", (e) => {
-	cursor.css("left", e.pageX + 4 + "px");
-	cursor.css("top", e.pageY + 4 + "px");
-});
-
-$(document).on("mouseenter", "button, a", function () {
-	cursor.addClass("cursor_hovered");
-});
-$(document).on("mouseleave", "button, a", function () {
-	cursor.removeClass("cursor_hovered");
-});
-
 window.addEventListener("load", function () {
 	$("#preloader").animate({ opacity: "0" }, "slow", function () {
 		$(this).remove();
@@ -29,6 +15,17 @@ const observer = lozad(".lozad", {
 observer.observe();
 
 $(document).ready(function () {
+	const cursor = $(".cursor");
+	$(document).on("mousemove scroll", (e) => {
+		cursor.css("left", e.pageX + 4 + "px");
+		cursor.css("top", e.pageY + 4 + "px");
+	});
+	$(document).on("mouseenter", "button, a", function () {
+		cursor.addClass("cursor_hovered");
+	});
+	$(document).on("mouseleave", "button, a", function () {
+		cursor.removeClass("cursor_hovered");
+	});
 	$("#burger").on("click", function () {
 		const burgerBtn = $(this);
 		const menu = burgerBtn.closest(".menu");
@@ -171,5 +168,4 @@ class Grain {
 	}
 }
 const grain = new Grain(document.getElementById("grain"));
-
 ScrollReveal().reveal(".scroll-reveal");

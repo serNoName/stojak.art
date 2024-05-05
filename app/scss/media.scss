@@ -2,29 +2,36 @@
     .menu__button:hover {
         --menu-border-opacity: .3;
     }
+
     .menu__burger:hover {
         --menu-border-opacity: .3;
         background-color: rgba(255, 255, 255, calc(--menu-border-opacity - 1));
     }
+
     .menu__link:hover {
         color: $secondary-color;
+
         &:before {
             opacity: 1;
         }
     }
+
     .social-networks__link:hover {
         scale: 1.4;
         opacity: .9;
     }
+
     .card-picture {
         &__name:hover {
             text-decoration: underline;
         }
+
         &__image:hover {
             scale: 1.1;
             opacity: .5;
             filter: blur(4px);
         }
+
         &__inner {
             &:hover {
                 &::before {
@@ -32,6 +39,7 @@
                 }
             }
         }
+
         &:hover {
             .card-picture {
                 &__more {
@@ -42,13 +50,6 @@
         }
     }
 }
-
-@media (pointer: none) {
-    .cursor {
-        display: none !important;
-    }
-}
-
 @media (hover:none) {
     .card-picture {
         &__more {
@@ -56,13 +57,19 @@
             opacity: 1;
         }
     }
+    .cursor {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {
+    :root {
+        --galery-grid-gap: 20px;
+    }
     .article {
         gap: 24px;
     }
-    .menu {
+   .menu {
         &__top {
             width: 100%;
         }
@@ -70,17 +77,13 @@
             gap: 0;
             flex-direction: column;
         }
-        &__wrapper {
-            display: none;
-        }
         &__bottom {
             padding: 0;
         }
         &__burger {
             position: static;
-            min-height: 56px;
         }
-    }
+    } 
 }
 
 @media (max-width: 480px) {
@@ -88,6 +91,9 @@
         &__gallery {
             margin-bottom: 12px;
         }
+    }
+    .menu {
+        bottom: var(--indentation-px);
     }
 } 
 

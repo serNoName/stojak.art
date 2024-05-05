@@ -15,7 +15,7 @@
     flex-direction: column;
     transition: .5s opacity ease-in-out, 1s translate cubic-bezier(.4,2.2,.2,.5);
     overflow: hidden;
-    max-width: calc(100dvw - 32px);
+    max-width: calc(100dvw - var(--indentation-px)*2);
     max-height: calc(100dvh - 48px);
     z-index: 2;
     opacity: 0;
@@ -34,6 +34,8 @@
         gap: 6px;
         border-radius: 8px;
         padding: 6px;
+        overflow-x: auto;
+        scrollbar-color: transparent transparent;
     }
 
     &__button {
@@ -63,6 +65,7 @@
         top: 0;
         left: 0;
         width: 120px;
+        min-height: 56px;
         --menu-border-opacity: 0;
         display: flex;
         align-items: center;

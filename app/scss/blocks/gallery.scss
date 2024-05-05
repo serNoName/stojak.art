@@ -1,7 +1,5 @@
 .gallery {
     &__grid {
-        --galery-grid-columns: 2;
-        --galery-grid-gap: 40px;
         columns: var(--galery-grid-columns);
         gap: var(--galery-grid-gap);
     }
