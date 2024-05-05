@@ -9,8 +9,16 @@
     --menu-border-rgb: 255, 255, 255;
     --menu-wrapper-bg-color: #3E3E3E;
 
+    --table-bg-color: var(--main-bg-color);
+    --table-bg-even-color: #DCDBDB;
+    --table-text-color: var(--main-text-color);
+    --table-bg-contrast-color: var(--table-text-color);
+    --table-text-contrast-color: var(--table-bg-color);
+    --table-line-color: #C9C7C7;
+
     --indentation-px: 8px;
     --container-px: 1440px;
+    --container-small-px: 800px;
 }
 
 $main-text-color: var(--main-text-color);

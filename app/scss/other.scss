@@ -7,10 +7,14 @@
 }
 
 .container {
+    --current-container-width: var(--container-px);
     margin: 0 auto;
     width: calc(100% - var(--indentation-px));
-    max-width: calc(var(--container-px) + var(--indentation-px)*2);
+    max-width: calc(var(--current-container-width) + var(--indentation-px)*2);
     padding: 0 var(--indentation-px);
+    &_small {
+        --current-container-width: var(--container-small-px)
+    }
 }
 
 .inner {

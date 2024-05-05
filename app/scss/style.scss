@@ -9,6 +9,8 @@
 @import 'blocks/gallery.scss';
 @import 'blocks/about-me.scss';
 @import 'blocks/preloader.scss';
+@import 'blocks/article.scss';
+@import 'blocks/table.scss';
 @import 'blocks/menu.scss';
 
 @import 'other.scss';
@@ -52,6 +54,7 @@ button {
     z-index: 9999;
     transform-origin: top left;
     backdrop-filter: invert(60%);
+    opacity: .2;
     &_hovered {
         height: 80px;
         width: 80px;
